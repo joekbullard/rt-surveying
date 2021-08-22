@@ -1,0 +1,192 @@
+body {
+  font-family: 'PT Serif', serif;
+}
+
+
+
+
+
+
+.header {
+    padding: 10px;
+    text-align: left;
+    background: #699E3C;
+    color: #302718;
+    /*text-shadow: 1px 1px 1px black;*/
+    font-size: 30px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+  }
+
+
+
+.navbar-custom {
+    background-color: #699E3C;
+    padding-right: 120px;
+    padding-left: 60px;
+}
+
+ 
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: white;
+    padding-right: 120px;
+}
+
+
+.intro-div {
+  padding: 40px 60px 40px 60px;
+  margin: 20px 120px 40px 120px ;
+  text-align: justify;
+  border: white;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+a:link {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+a:hover {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+img {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    width:auto;
+    height:auto;
+    object-fit:cover;
+}
+
+#email-link {
+    color: white;
+}
+
+#footer-text {
+  color: gray;
+}
+
+
+#sub-header {
+    font-size: 20px;
+    color: #302718;
+    box-shadow: None;
+}
+
+#header-container {
+  padding: 10px 120px 20px 50px;
+  height: auto;
+  display: flex;
+}
+
+#box-container {
+  padding: 40px 120px 40px 120px;
+  margin: 0px 80px 60px 80px ;
+    height: auto;
+    display: flex;
+    text-align: justify;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+
+  #header-box-1 {
+    padding-left: 20px;
+    width: 60%;
+    height: 50%;
+    text-align: justify;
+  }
+
+  #header-box-2 {
+    padding: 10px;
+    width: 60%;
+    height: 50%;
+    font-size: medium;
+    padding-left: 260px;
+  }
+
+#box-1 {
+    padding: 20px;
+    width: 60%;
+    height: 50%;
+  }
+
+#box-2 {
+    padding: 10px;
+    width: 40%;
+    height: 50%;
+    font-size: medium;
+    text-align: justify;
+    box-shadow: 0;
+    text-shadow: 1px 1px 1px #000000;
+  }
+
+  @media (max-width: 800px) {
+    #box-container {
+      flex-direction: column;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    #header-container {
+        padding-left: 10px;
+        padding-right: 10px;
+        text-align: center;
+    }
+    #header-box-1 {
+      padding: 0px;
+      width: 100%;
+      height: 50%;
+      text-align: center;
+    }
+    #header-box-2 {
+      padding: 0px;
+      width: 100%;
+      height: 50%;
+      text-align: center;
+    }
+
+
+
+    #box-1 {
+        padding-left: 40px;
+        padding-right: 40px;
+        width: 100%;
+        height: 50%;
+        text-align: justify;
+      }
+    #box-2 {
+        padding-left: 40px;
+        padding-right: 40px;
+        width: 100%;
+        height: 50%;
+        text-align: justify;
+      }
+
+    .header {
+        text-align: center;
+        padding: 0px;
+    }
+
+    .navbar-custom {
+      background-color: #699E3C;
+      padding-right: 20px;
+      padding-left:10px;
+  }
+
+    .intro-div {
+      padding: 40px 20px 10px 20px;
+      margin: 0px 0px 0px 0px ;
+    }
+  }
+
