@@ -1,19 +1,17 @@
 body {
-  font-family: 'PT Serif', serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 
 
 
-
-
 .header {
-    padding: 10px;
     text-align: left;
-    background: #699E3C;
+    /*background: #699E3C;*/
     color: #302718;
     /*text-shadow: 1px 1px 1px black;*/
     font-size: 30px;
+    margin: 0px 120px 0px 120px ;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
 
@@ -22,7 +20,6 @@ body {
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: red;
     color: white;
     text-align: center;
   }
@@ -30,22 +27,35 @@ body {
 
 
 .navbar-custom {
-    background-color: #699E3C;
-    padding-right: 120px;
-    padding-left: 60px;
+    background-color: #302718;
+    text-align: center ;
+    font-size:medium;
+    vertical-align: center;
+}
+
+.nav-item {
+  padding-left: 20px;
+  padding-right: 20px;
+  vertical-align: center;
 }
 
  
 .navbar-custom .navbar-brand,
 .navbar-custom .navbar-text {
     color: white;
-    padding-right: 120px;
+    text-align: center;
+    vertical-align: center;
+
 }
 
 
+
 .intro-div {
-  padding: 40px 60px 40px 60px;
-  margin: 20px 120px 40px 120px ;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-top: 20px;  
+  padding-bottom: 20px;
+  margin: 0px 120px 0px 120px;
   text-align: justify;
   border: white;
   background-color: white;
@@ -64,11 +74,42 @@ a:hover {
     text-decoration: none;
 }
 
+h3 {
+  font-size:large;
+}
+
+p {
+  color: #302718
+}
+
+#contact-links {
+  color: #302718
+}
+
 img {
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
-    width:auto;
-    height:auto;
+    /*box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;*/
     object-fit:cover;
+}
+
+#logo-icon1 {
+  border-radius: 50%; 
+  background-color:white; 
+  height: 110px; 
+  width: 110px; 
+  position: absolute;  
+  margin: auto;
+  margin-left: 110px;
+}
+
+#rt-logo {
+  height: 120px;
+  vertical-align: middle;
+}
+
+#logo-icon2 {
+  border-radius: 50%; 
+  background-color:white; 
+  vertical-align: center;
 }
 
 #email-link {
@@ -79,6 +120,11 @@ img {
   color: gray;
 }
 
+#main-header {
+  color: #302718;
+  box-shadow: None;
+  font-weight: bold;
+}
 
 #sub-header {
     font-size: 20px;
@@ -87,73 +133,115 @@ img {
 }
 
 #header-container {
-  padding: 10px 120px 20px 50px;
+  background-color: #699E3C;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+
+#header-container2 {
+  padding: 20px 50px 20px 50px;
   height: auto;
   display: flex;
+  background-color: #302718;
+  justify-content: left;
 }
 
 #box-container {
-  padding: 40px 120px 40px 120px;
-  margin: 0px 80px 60px 80px ;
-    height: auto;
+    height: 40%;
     display: flex;
-    text-align: justify;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
 
-  #header-box-1 {
-    padding-left: 20px;
-    width: 60%;
-    height: 50%;
-    text-align: justify;
-  }
+  #header-box-1 { 
+    vertical-align: middle;
+    padding-right: 10px;
+    }
 
   #header-box-2 {
-    padding: 10px;
-    width: 60%;
-    height: 50%;
-    font-size: medium;
-    padding-left: 300px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    text-align: left;
+  }
+
+  #header-box-3 {
+    padding-top: 35px;
+    padding-bottom: 10px;
+    padding-left: 120px;
+    color: #302718;
+    text-align: right;
+    font-size: 12pt;
+    vertical-align: middle;
+    width: max-content;
+    flex-direction: column;
   }
 
 #box-1 {
-    padding: 20px;
-    width: 60%;
-    height: 50%;
+    padding-left: 20px;
+    padding-right: 20px; 
+    width: 100%;
+    height: 100%;
   }
 
 #box-2 {
-    padding: 10px;
-    width: 40%;
-    height: 50%;
+    padding-left: 50px;
+    padding-top: 30px;
     font-size: medium;
     text-align: justify;
-    box-shadow: 0;
+    align-content: center;
+    width: 100%;
+    height: 100%;
     text-shadow: 1px 1px 1px #000000;
   }
 
   @media (max-width: 800px) {
     #box-container {
-      flex-direction: column;
       padding-left: 10px;
       padding-right: 10px;
     }
+
+    #rt-logo {
+      vertical-align: middle;
+      height: 80px;
+      padding-top: 20px;
+    }
+
+    #main-header {
+      font-size: 20pt;
+    }
+
+    #sub-header {
+      font-size: 14pt;
+    }
+
     #header-container {
-        padding-left: 10px;
-        padding-right: 10px;
-        text-align: center;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 20px;
+      display: flex;
+      text-align: justify;
+      justify-content: center;
     }
     #header-box-1 {
-      padding: 0px;
-      width: 100%;
-      height: 50%;
-      text-align: center;
+      vertical-align: middle;
+      padding-left: 0px;
     }
     #header-box-2 {
-      padding: 0px;
-      width: 100%;
-      height: 50%;
-      text-align: center;
+      text-align: left;
+    }
+
+    #header-box-3 {
+      display: none;
+    }
+
+    #logo-icon {
+      height: 80px;
+      width: 80px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
 
@@ -169,23 +257,28 @@ img {
         padding-left: 40px;
         padding-right: 40px;
         width: 100%;
-        height: 50%;
+        height: 100%;
         text-align: justify;
+        margin: auto;
       }
 
     .header {
         text-align: center;
         padding: 0px;
+        margin: 0px;
     }
 
     .navbar-custom {
-      background-color: #699E3C;
-      padding-right: 20px;
-      padding-left:10px;
+      background-color: #302718;
+      text-align: left;
+
+  }
+  .nav-item {
+    padding: 5px 0px 5px 0px;
   }
 
     .intro-div {
-      padding: 40px 20px 10px 20px;
+      padding: 40px 0px 10px 0px;
       margin: 0px 0px 0px 0px ;
     }
   }
