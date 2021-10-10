@@ -223,6 +223,10 @@ img {
       padding-top: None;
     }
 
+    h2 {
+      text-align: left;
+    }
+
     #main-header {
       font-size: 20pt;
     }
