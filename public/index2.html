@@ -9,9 +9,46 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <script src="./carousel.js" defer></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="output.css">
+    <style>
+        .carousel-open:checked+.carousel-item {
+            position: static;
+            opacity: 100;
+        }
+
+        .carousel-item {
+            -webkit-transition: opacity 0.6s ease-out;
+            transition: opacity 0.6s ease-out;
+        }
+
+        #carousel-1:checked~.control-1,
+        #carousel-2:checked~.control-2,
+        #carousel-3:checked~.control-3 {
+            display: block;
+        }
+
+        .carousel-indicators {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            bottom: 2%;
+            left: 0;
+            right: 0;
+            text-align: center;
+            z-index: 10;
+        }
+
+        #carousel-1:checked~.control-1~.carousel-indicators li:nth-child(1) .carousel-bullet,
+        #carousel-2:checked~.control-2~.carousel-indicators li:nth-child(2) .carousel-bullet,
+        #carousel-3:checked~.control-3~.carousel-indicators li:nth-child(3) .carousel-bullet {
+            color: #2b6cb0;
+            /*Set to match the Tailwind colour you want the active one to be */
+        }
+    </style>
 </head>
 
 <body class="bg-slate-100">
@@ -2987,6 +3024,7 @@
             </svg>
         </button>
 
+
         <!--Menu-->
         <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto"
             :class="{ 'block shadow-3xl': isOpen, 'hidden': !isOpen }" @click.away="isOpen = false"
@@ -3087,16 +3125,85 @@
             </div>
         </div>
     </div>
-    <div class="flex flex-col bg-slate-200 text-center">
-        <footer class="py-3 bg-grey">
-            <a href="tel:+447547 797 882"><p class="m-0 text-muted text-center">t: 07547 797 882</p></a>
-            <a href='mailto:george@rtsurveying.co.uk'><p class="m-0 text-muted text-center">e: george@rtsurveying.co.uk</p></a>
-            <p class="m-0 text-muted text-center">Company number: 13314603 registered in England and Wales</p>
-        </br>
-            <p class="m-0 text-muted text-center">Copyright &copy; 2022 - RT Surveying Limited</p>
-            <p class="m-0 text-muted text-center"> Website design by <a href="https://joekbullard.github.io/" id="footer-text">joekbullard</a></p>
-        </footer>
+    <div class="w-full py-8 bg-emerald-800 flex justify-center">
+
+
+        <section :aria-labelledby="title.toLowerCase().replace(' ', '-')"
+            class="flex flex-col items-center justify-center h-128 w-full max-w-lg"
+            @keydown.arrow-right="state.usedKeyboard = true;updateCurrent(nextSlide)"
+            @keydown.arrow-left="state.usedKeyboard = true;updateCurrent(previousSlide)"
+            @keydown.window.tab="state.usedKeyboard = true" x-data="testimonialSlideshow(slides)" x-title="Testimonials"
+            x-init="setup()">
+            <div :id="title.toLowerCase().replace(' ', '-')" class="sr-only" x-text="title">
+            </div>
+            <div tabindex="1"
+                class="relative w-full flex flex-col justify-around h-96 overflow-hidden mb-4 border-lime-300 border-l-8 rounded-lg bg-white"
+                :class="{'focus:outline-none' : !state.usedKeyboard}">
+                <template x-for="(slide, index) in slides" :key="slide.id">
+                    <div :aria-hidden="(state.order[state.currentSlide] != slide.id).toString()">
+                        <div x-show="state.order[state.currentSlide] == slide.id" class="w-full text-center p-4"
+                            :x-ref="slide.id" :x-transition:enter="transitions('enter')"
+                            :x-transition:enter-start="transitions('enter-start')"
+                            :x-transition:enter-end="transitions('enter-end')"
+                            :x-transition:leave="transitions('leave')"
+                            :x-transition:leave-start="transitions('leave-start')"
+                            :x-transition:leave-end="transitions('leave-end')">
+                            <blockquote class="">
+                                <p class="text-lg text-left italic mb-4 text-gray-800 leading-tight"
+                                    x-html="slide.content">
+                                </p>
+                                <footer class="text-left"><cite class="text-xl font-medium text-emerald-800" x-html="slide.author"></cite><br>
+                                    <company x-html="slide.position"></company>
+                                </footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </template>
+                <div x-cloak class="w-full bg-white">
+                    <div class="bg-white h-2 w-0" :class="{'progress': !state.moving}"
+                        :style="`animation-duration:${attributes.timer}ms;`">
+                    </div>
+                </div>
+            </div>
+            <div aria-live="polite" aria-atomic="true" class="sr-only"
+                x-text="'Slide ' + (state.currentSlide + 1) + ' of ' + slides.length">
+            </div>
+            <div>
+                <template x-for="(slide, index) in Array.from({ length: slides.length })" :key="index">
+                    <button
+                        class=" text-white inline-flex items-center justify-center bg-lime-300 hover:animate-pulse hover:bg-slate-200 w-4 h-4 p-0 mb-2 rounded-full"
+                        style="text-indent:-9999px" :class="{
+                            'bg-slate-200' : state.currentSlide == index,
+                            'focus:outline-none' : !state.usedKeyboard,
+                        }" @click="stopAutoplay();updateCurrent(index)" x-text="index + 1">
+                    </button>
+                </template>
+            </div>
+        </section>
     </div>
+
+
+
+    </div>
+
+        <div id="alpine-devtools" x-data="devtools()" x-show="alpines.length" x-init="start()">
+        </div>
+        <div class="flex flex-col bg-slate-200 text-center">
+            <footer class="py-3 bg-grey">
+                <a href="tel:+447547 797 882">
+                    <p class="m-0 text-muted text-center">t: 07547 797 882</p>
+                </a>
+                <a href='mailto:george@rtsurveying.co.uk'>
+                    <p class="m-0 text-muted text-center">e: george@rtsurveying.co.uk</p>
+                </a>
+                <p class="m-0 text-muted text-center">Company number: 13314603 registered in England and Wales</p>
+                </br>
+                <p class="m-0 text-muted text-center">Copyright &copy; 2022 - RT Surveying Limited</p>
+                <p class="m-0 text-muted text-center"> Website design by <a href="https://joekbullard.github.io/"
+                        id="footer-text">joekbullard</a></p>
+            </footer>
+        </div>
+
 </body>
 
 </html>

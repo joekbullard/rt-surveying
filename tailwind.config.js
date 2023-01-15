@@ -17,7 +17,11 @@ module.exports = {
       '8': '20px',
       '12': '12px',
     },
-    extend: {},
+    extend: {
+      spacing: {
+        '128': '400px',
+      },
+    },
   },
   plugins: [],
 }
