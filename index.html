@@ -18,7 +18,7 @@
 <body class="bg-slate-100">
     <!-- https://alpinetoolbox.com/examples/navbar -->
     <nav class="flex items-stretch justify-between flex-wrap p-6 w-full z-10 top-0" x-data="{ isOpen: false }"
-        @keydown.escape="isOpen = false" :class="{ 'shadow-lg bg-emerald-900' : isOpen , 'bg-emerald-900' : !isOpen}">
+        @keydown.escape="isOpen = false" :class="{ 'shadow-lg bg-emerald-800' : isOpen , 'bg-emerald-800' : !isOpen}">
         <!--Logo etc-->
         <div class="flex items-center text-slate-200 flex-shrink-0 my-auto">
             <svg version="1.1" id="Layer_1" class="fill-slate-300 h-16 w-16 md:h-24 md:w-24"
@@ -3039,17 +3039,17 @@
             Welcome to Rockell Tree Surveying
         </h2>
         <hr class="my-4 mx-auto w-1/3 h-1 bg-emerald-800 rounded border-0 md:my-10">
-        <p class="md:text-2xl text-xl text-left font-serif text-slate-800">
+        <p class="md:text-xl text-lg text-left font-serif text-slate-800">
             Rockell Tree Surveying provides specialist advice in the management of trees for both tree safety
             and bat roosting suitability.
         </p>
-        <p class="md:text-2xl text-xl text-left font-serif text-slate-800">
+        <p class="md:text-xl text-lg text-left font-serif text-slate-800">
             Based between Bristol and Bath, we serve clients across the south west and beyond.
             George Rockell (Director) has gained 10 years of experience across the arboricultural and
             ecological sectors - working as an arborist, in consultancy, for the Wildlife Trust and within local
             councils.
         </p>
-        <p class="md:text-2xl text-xl pb-4 text-left font-serif text-slate-800">
+        <p class="md:text-xl text-lg pb-4 text-left font-serif text-slate-800">
             Please browse our site for information about the services we offer or get in touch if you want to discuss
             your requirements.
         </p>
@@ -3111,11 +3111,12 @@
             </div>
         </div>
 
-
     </div>
-
-
-
+    <div class="grid gap-4 px-2 bg-white grid-cols-3 justify-items-center items-center grid-rows-1">
+        <img src="media/logo1.jpg">
+        <img src="media/logo3.jpg">
+        <img src="media/logo2.jpg">
+    </div>
     </div>
 
     <div class="flex flex-col bg-slate-200 text-center">
