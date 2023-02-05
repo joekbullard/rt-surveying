@@ -1,0 +1,5 @@
+
+source: .
+destination: ./_site
+permalink: pretty
+safe: true

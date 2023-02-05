@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>RT Surveying</title>
+  <meta name="description" content="">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js" defer></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="build.css">
+</head>
+
+<body class="bg-slate-200">
+  <!-- https://alpinetoolbox.com/examples/navbar -->
+  <nav class="flex items-stretch justify-between flex-wrap p-6 w-full z-10 top-0" x-data="{ isOpen: false }"
+    @keydown.escape="isOpen = false" :class="{ ' bg-emerald-800' : isOpen , 'bg-emerald-800' : !isOpen}">
+    <!--Logo etc-->
+    <a href="rtsurveying.co.uk">
+    <div class="flex items-center text-slate-200 flex-shrink-0 my-auto">
+      <img src="./media/Barren-Tree-Silhouette-2.svg" class="invert h-16 w-16 md:h-24 md:w-24">
+
+      
+      <div class="flex flex-col justify-center">
+        <p class="font-serif text-2xl md:text-4xl">
+          RT Surveying
+        </p>
+        <p class="font-serif hidden md:block text-lime-200 text-md md:text-lg">
+          Arboriculture and Ecological Consultancy
+        </p>
+      </div>
+    
+    </div>
+  </a>
+
+    <!--Toggle button (hidden on large screens)-->
+    <button @click="isOpen = !isOpen" type="button"
+      class="block lg:hidden px-2 text-slate-200 hover:text-lime-200 focus:outline-none"
+      :class="{ 'transition transform-180': isOpen }">
+      <svg class="h-10 w-10 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path x-show="isOpen" fill-rule="evenodd" clip-rule="evenodd"
+          d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z" />
+        <path x-show="!isOpen" fill-rule="evenodd"
+          d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z" />
+      </svg>
+    </button>
+
+
+    <!--Menu-->
+    <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto"
+      :class="{ 'block shadow-3xl': isOpen, 'hidden': !isOpen }" @click.away="isOpen = false" x-show.transition="true">
+      <ul class="pt-6 lg:pt-0 list-reset lg:flex text-lg text-slate-200 font-serif justify-end flex-1 items-center">
+        <li class="mr-3">
+          <a href="./index.html"
+            class="inline-block py-2 px-4 no-underline hover:text-lime-200 duration-150 hover:text-underline" href="#"
+            @click="isOpen = false">Home
+          </a>
+        </li>
+        <li class="mr-3">
+          <a href="./services.html"
+            class="inline-block text-slate-200 no-underline hover:text-lime-200 hover:text-underline py-2 px-4" href="#"
+            @click="isOpen = false">Services
+          </a>
+        </li>
+        <li class="mr-3">
+          <a href="./about.html"
+            class="inline-block text-zinc-200 no-underline hover:text-lime-200 hover:text-underline py-2 px-4" href="#"
+            @click="isOpen = false">About
+          </a>
+        </li>
+        <li class="mr-3">
+          <a href="./contact.html"
+            class="inline-block text-zinc-200 no-underline hover:text-lime-200 hover:text-underline py-2 px-4" href="#"
+            @click="isOpen = false">Contact
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  </div>
+  <div class="p-12 min-h-200 text-center bg-center bg-fixed relative overflow-hidden bg-no-repeat bg-cover"
+    style="
+  background-image: linear-gradient(rgba(56, 57, 56, 0.209), rgba(56, 57, 56, 0.209)), url('media/gr-midclimb.jpg');
+  height: 400px;
+">
+    <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"
+      style="background-color: rgba(0, 0, 0, 0.6)">
+      <div class="flex justify-center items-center h-full">
+        <div class="text-slate-200">
+          <h2 class="font-semibold text-5xl mb-4 font-serif md:text-5xl">Rockell Tree Surveying</h2>
+          <h4 class="font-semibold text-xl text-lime-200 font-serif mb-6">Arboriculture and
+            Ecological Consultancy</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="md:px-16 px-4 md:py-10 space-y-6 mx-auto md:mx-20">
+    <div class="container m-auto md:text-xl text-lg text-left font-serif text-slate-800">
+      <h2 class="text-emerald-800 text-bold pt-4 text-2xl md:text-4xl text-center font-serif lg:text-center">
+        Contact us
+      </h2>
+      <hr class="my-4 mx-auto w-1/3 h-1 bg-emerald-800 rounded border-0 md:my-10">
+      <p>Interested in our services or just want to find out more? Get in touch using our details below:</p>
+      </br>
+      <p class="py-4 underline"><a href='mailto:george@rtsurveying.co.uk'>george@rtsurveying.co.uk</a></p>
+      <p class="underline"><a href='tel:+447547 797 882'>07547 797 882</a></p>
+      <br>
+    </div>
+  </div>
+
+
+
+  </div>
+  <div class="grid gap-4 px-2 bg-white grid-cols-3 justify-items-center items-center grid-rows-1">
+    <img src="media/logo1.jpg" alt="City and Guilds and Lantra Approved Logo">
+    <img src="media/logo3.jpg" alt="Arboricultural Association Member Logo">
+    <img src="media/logo2.jpg" alt="QTRA Licensed User Logo">
+  </div>
+
+  <div class="flex flex-col text-md bg-white-200 text-center">
+    <footer class="py-3 bg-grey">
+      <a href="tel:+447547 797 882">
+        <p class="m-0 text-center">t: 07547 797 882</p>
+      </a>
+      <a href='mailto:george@rtsurveying.co.uk'>
+        <p class="m-0 text-muted text-center">e: george@rtsurveying.co.uk</p>
+      </a>
+      <p class="m-0 text-muted text-center">Company number: 13314603 registered in England and Wales</p>
+      </br>
+      <p class="m-0 text-muted text-center">Copyright &copy; 2022 - RT Surveying Limited</p>
+      <p class="m-0 text-muted text-center"> Website design by <a href="https://joekbullard.github.io/"
+          id="footer-text">joekbullard</a></p>
+    </footer>
+  </div>
+
+</body>
+
+</html>

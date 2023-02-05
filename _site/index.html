@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>RT Surveying</title>
+    <meta name="description" content="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <script src="./carousel.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="build.css">
+</head>
+
+<body class="bg-slate-200">
+    <!-- https://alpinetoolbox.com/examples/navbar -->
+    <nav class="flex items-stretch justify-between flex-wrap p-6 w-full z-10 top-0" x-data="{ isOpen: false }"
+        @keydown.escape="isOpen = false" :class="{ 'shadow-lg bg-emerald-800' : isOpen , 'bg-emerald-800' : !isOpen}">
+        <a href="rtsurveying.co.uk">
+        <div class="flex items-center text-slate-200 flex-shrink-0 my-auto">
+            <img src="./media/Barren-Tree-Silhouette-2.svg" class="invert h-16 w-16 md:h-24 md:w-24">
+
+
+            <div class="flex flex-col justify-center">
+                <p class="font-serif text-2xl md:text-4xl">
+                    RT Surveying
+                </p>
+                <p class="font-serif hidden md:block text-lime-200 text-md md:text-lg">
+                    Arboriculture and Ecological Consultancy
+                </p>
+            </div>
+        </div>
+        </a>
+
+        <!--Toggle button (hidden on large screens)-->
+        <button @click="isOpen = !isOpen" type="button"
+            class="block lg:hidden px-2 text-slate-200 hover:text-lime-200 focus:outline-none"
+            :class="{ 'transition transform-180': isOpen }">
+            <svg class="h-10 w-10 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path x-show="isOpen" fill-rule="evenodd" clip-rule="evenodd"
+                    d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z" />
+                <path x-show="!isOpen" fill-rule="evenodd"
+                    d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z" />
+            </svg>
+        </button>
+
+
+        <!--Menu-->
+        <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto"
+            :class="{ 'block shadow-3xl': isOpen, 'hidden': !isOpen }" @click.away="isOpen = false"
+            x-show.transition="true">
+            <ul
+                class="pt-6 lg:pt-0 list-reset lg:flex text-lg text-slate-200 font-serif justify-end flex-1 items-center">
+                <li class="mr-3">
+                    <a href="./index.html"
+                        class="inline-block py-2 px-4 no-underline hover:text-lime-200 duration-150 hover:text-underline"
+                        href="#" @click="isOpen = false">Home
+                    </a>
+                </li>
+                <li class="mr-3">
+                    <a href="./services.html"
+                        class="inline-block text-slate-200 no-underline hover:text-lime-200 hover:text-underline py-2 px-4"
+                        href="#" @click="isOpen = false">Services
+                    </a>
+                </li>
+                <li class="mr-3">
+                    <a href="./about.html"
+                        class="inline-block text-zinc-200 no-underline hover:text-lime-200 hover:text-underline py-2 px-4"
+                        href="#" @click="isOpen = false">About
+                    </a>
+                </li>
+                <li class="mr-3">
+                    <a href="./contact.html"
+                        class="inline-block text-zinc-200 no-underline hover:text-lime-200 hover:text-underline py-2 px-4"
+                        href="#" @click="isOpen = false">Contact
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    </div>
+    <div class="p-12 min-h-200 text-center bg-center bg-fixed relative overflow-hidden bg-no-repeat bg-cover"
+        style="
+  background-image: linear-gradient(rgba(56, 57, 56, 0.209), rgba(56, 57, 56, 0.209)), url('media/gr-midclimb.jpg');
+  height: 400px;
+">
+        <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full  overflow-hidden bg-fixed"
+            style="background-color: rgba(0, 0, 0, 0.6)">
+            <div class="flex justify-center items-center h-full">
+                <div class="text-slate-200">
+                    <h2 class="font-semibold text-5xl mb-4 font-serif md:text-5xl">Rockell Tree Surveying</h2>
+                    <h4 class="font-semibold text-xl text-lime-200 font-serif mb-6">Arboriculture and
+                        Ecological Consultancy</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="md:px-16 px-4 md:py-10 space-y-6 mx-auto md:mx-20">
+        <h2 class="text-emerald-900 text-bold pt-4 text-2xl md:text-4xl text-center font-serif lg:text-center">
+            Welcome to Rockell Tree Surveying
+        </h2>
+        <hr class="mb-4 mx-auto w-1/3 h-1 bg-emerald-800 rounded border-0 md:my-10">
+        <p class="md:text-xl text-md text-left font-serif text-slate-800">
+            Rockell Tree Surveying provides specialist advice in the management of trees for both tree safety
+            and bat roosting suitability.
+        </p>
+        <p class="md:text-xl text-md text-left font-serif text-slate-800">
+            Based between Bristol and Bath, we serve clients across the south west and beyond.
+            George Rockell (Director) has gained 10 years of experience across the arboricultural and
+            ecological sectors - working as an arborist, in consultancy, for the Wildlife Trust and within local
+            councils.
+        </p>
+        <p class="md:text-xl text-md pb-4 text-left font-serif text-slate-800">
+            Please browse our site for information about the services we offer or get in touch if you want to discuss
+            your requirements.
+        </p>
+    </div>
+    <div class="bg-emerald-800 py-2">
+        <div class="text-4xl font-serif lg:px-12 text-center pt-4 px-4 text-lime-200">
+            Testimonials
+        </div>
+        <hr class="mx-auto w-1/3 h-1 bg-lime-300 rounded border-0 md:my-10">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 justify-items-center py-2 gap-2 max-w">
+            <div class="max-w-md border-solid border-lime-300 border-l-8 py-4 px-8 bg-white shadow-lg md:rounded-r-lg">
+                <div>
+                    <p class="italic mt-2 pb-2 text-gray-600">“George has worked well for us in recent years, turning up
+                        to site punctually and completing his work to a high standard. I
+                        always get data from him in a timely manner and he takes good initiative on site, going further
+                        than the average ‘subby’.”</p>
+                </div>
+                <div class="flex flex-col justify-end">
+                    <p class="text-xl font-medium text-emerald-800">Russell Goodchild</p>
+                    <p class="text-emerald text-md">Ecus</p>
+                </div>
+            </div>
+            <div class="max-w-md border-solid border-lime-300 border-l-8 py-4 px-8 bg-white shadow-lg md:rounded-r-lg">
+                <div>
+                    <p class="italic mt-2 pb-2 text-gray-600">“We were very impressed with the tree survey that was
+                        carried out by Rockell Tree Surveying. The report is extremely thorough and gave us detailed
+                        information to move forward with
+                        maintenance work, confident that we were making the churchyard safer for all who visit. The data
+                        also prevented us
+                        felling trees unnecessarily, which is important when trees are so essential for the
+                        environment.”</p>
+                </div>
+                <div class="flex flex-col justify-end">
+                    <p class="text-xl font-medium text-emerald-800">Rose Mays</p>
+                    <p class="text-emerald text-md">Clutton with Cameley PCC</p>
+                </div>
+            </div>
+            <div class="max-w-md border-solid border-lime-300 border-l-8 py-4 px-8 bg-white shadow-lg md:rounded-r-lg">
+                <div>
+                    <p class="italic mt-2 pb-2 text-gray-600">“We have used Rockell Tree Surveying Ltd on a variety of
+                        jobs requiring climbed inspections of trees to assess bat roost
+                        potential. The service has always been excellent - professional surveyors working to a high
+                        standard, with the results
+                        provided in a timely fashion electronically so they integrate into our systems. I highly
+                        recommend George and his team
+                        for bat survey and climbed inspection work.”</p>
+                </div>
+                <div class="flex flex-col justify-end">
+                    <p class="text-xl font-medium text-emerald-800">Tilly Tillbrook</p>
+                    <p class="text-emerald text-md">Integrated Ecological Solutions</p>
+                </div>
+            </div>
+            <div class="max-w-md border-solid border-lime-300 border-l-8 py-4 px-8 bg-white shadow-lg md:rounded-r-lg">
+                <div>
+                    <p class="italic mt-2 pb-2 text-gray-600">“George does very well in offering his experience and
+                        expertise in
+                        aspects of the ecology and arboriculture field, to help provide the best working solutions.
+                        He is extremely flexible and dedicated to the task at hand, while also offering a friendly
+                        and open platform for communication. He is very knowledgeable about his field and can
+                        provide advice where others are unsure.”</p>
+                </div>
+                <div class="flex flex-col justify-end">
+                    <p class="text-xl font-medium text-emerald-800">Daniel Tackie</p>
+                    <p class="text-emerald text-md">RSK Biocensus</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="grid gap-4 px-2 bg-white grid-cols-3 justify-items-center items-center grid-rows-1">
+        <img src="media/logo1.jpg" alt="City and Guilds and Lantra Approved Logo">
+        <img src="media/logo3.jpg" alt="Arboricultural Association Member Logo">
+        <img src="media/logo2.jpg" alt="QTRA Licensed User Logo">
+    </div>
+    </div>
+
+    <div class="flex flex-col text-md bg-white text-center">
+        <footer class="py-3 bg-grey">
+            <a href="tel:+447547 797 882">
+                <p class="m-0 text-muted text-center">t: 07547 797 882</p>
+            </a>
+            <a href='mailto:george@rtsurveying.co.uk'>
+                <p class="m-0 text-muted text-center">e: george@rtsurveying.co.uk</p>
+            </a>
+            <p class="m-0 text-muted text-center">Company number: 13314603 registered in England and Wales</p>
+            </br>
+            <p class="m-0 text-muted text-center">Copyright &copy; 2022 - RT Surveying Limited</p>
+            <p class="m-0 text-muted text-center"> Website design by <a href="https://joekbullard.github.io/"
+                    id="footer-text">joekbullard</a></p>
+        </footer>
+    </div>
+
+</body>
+
+</html>
