@@ -9,21 +9,21 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
-  <script src="./carousel.js" defer></script>
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js" defer></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="output.css">
+  <link rel="stylesheet" href="build.css">
 </head>
 
 <body class="bg-slate-200">
   <!-- https://alpinetoolbox.com/examples/navbar -->
   <nav class="flex items-stretch justify-between flex-wrap p-6 w-full z-10 top-0" x-data="{ isOpen: false }"
-    @keydown.escape="isOpen = false" :class="{ 'shadow-lg bg-emerald-800' : isOpen , 'bg-emerald-800' : !isOpen}">
+    @keydown.escape="isOpen = false" :class="{ ' bg-emerald-800' : isOpen , 'bg-emerald-800' : !isOpen}">
     <!--Logo etc-->
+    <a href="rtsurveying.co.uk">
     <div class="flex items-center text-slate-200 flex-shrink-0 my-auto">
       <img src="./media/Barren-Tree-Silhouette-2.svg" class="invert h-16 w-16 md:h-24 md:w-24">
 
-
+      
       <div class="flex flex-col justify-center">
         <p class="font-serif text-2xl md:text-4xl">
           RT Surveying
@@ -32,7 +32,9 @@
           Arboriculture and Ecological Consultancy
         </p>
       </div>
+    
     </div>
+  </a>
 
     <!--Toggle button (hidden on large screens)-->
     <button @click="isOpen = !isOpen" type="button"
@@ -79,7 +81,7 @@
     </div>
   </nav>
   </div>
-  <div class="p-12 min-h-200 text-center shadow-md bg-center bg-fixed relative overflow-hidden bg-no-repeat bg-cover"
+  <div class="p-12 min-h-200 text-center bg-center bg-fixed relative overflow-hidden bg-no-repeat bg-cover"
     style="
   background-image: linear-gradient(rgba(56, 57, 56, 0.209), rgba(56, 57, 56, 0.209)), url('media/gr-midclimb.jpg');
   height: 400px;
@@ -87,7 +89,7 @@
     <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"
       style="background-color: rgba(0, 0, 0, 0.6)">
       <div class="flex justify-center items-center h-full">
-        <div class="text-slate-200 shadow-md">
+        <div class="text-slate-200">
           <h2 class="font-semibold text-5xl mb-4 font-serif md:text-5xl">Rockell Tree Surveying</h2>
           <h4 class="font-semibold text-xl text-lime-200 font-serif mb-6">Arboriculture and
             Ecological Consultancy</h4>
